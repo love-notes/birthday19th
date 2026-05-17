@@ -879,7 +879,6 @@ body{
     <div class="sheet" role="dialog" aria-modal="true" aria-label="Gift letter">
       <div id="modalBody"></div>
       <div class="modalActions">
-        <a class="btn btnPrimary" id="spotifyBtn" href="#" target="_blank" rel="noopener" style="display:none;">Open Spotify Playlist</a>
         <button class="btn btnSecondary" id="closeModal" type="button" aria-label="Close letter">Close</button>
       </div>
     </div>
@@ -1044,7 +1043,6 @@ const trayWell    = document.getElementById("trayWell");
 const modalEl     = document.getElementById("modal");
 const modalBodyEl = document.getElementById("modalBody");
 const closeModal  = document.getElementById("closeModal");
-const spotifyBtn  = document.getElementById("spotifyBtn");
 const srAnnounce  = document.getElementById("srAnnounce");
 const starField   = document.querySelector(".starField");
 const reelBoxes   = Array.from(document.querySelectorAll(".reel"));
@@ -1343,20 +1341,30 @@ const LETTERS = {
     title: "heart",
     img: "photo-star.jpg",
     paragraphs: [
-      "some songs do not just play. they stay.",
-      "and here are five songs that always bring me back to you: the way you feel, the way you soften the world, the way a single moment with you can change the entire day.",
-      "1) Ten storey love song - the stone roses", 
-      "2) One love - the stone roses",
-      "3) Everyone adores you - matt maltese", 
-      "4) Anytime, anyplace, anyhow - matt maltese", 
-      "5) love - wave to earth",
-      "6) leasons - wave to earth",
-      "7) pretty boy - the neighborhood",
-      "8) nothing - bruno major",
-      "9) the most beautiful thing - bruno major",
-      "When you listen, I hope you hear what I cannot always say out loud: you mean so much to me."
+      "and here are twenty things i really love about you. some are small, some are deep, all of them are true.",
+      "1) Your kindness when nobody is watching.", 
+      "2) The way you listen and make people feel understood.", 
+      "3) Your patience. ",
+      "4) Your honesty.",
+      "5) Your quiet strength.",
+      "6) How you notice details.",
+      "7) Your warmth.",
+      "8) Your courage.", 
+      "9) The way you care deeply.",
+      "10) The way you keep going even when it is hard.",
+      "11) Your laugh.",
+      "12) Your voice when you are relaxed.",
+      "13) Your mind.",
+      "14) Your sincerity.",
+      "15) Your gentle heart.",
+      "16) How safe I feel around you.",
+      "17) How you make ordinary moments feel special.",
+      "18) How you inspire me to be better.",
+      "19) How you love in your own beautiful way.",
+      "20) How you are simply you.",
+      "I could keep going. I always will."
     ],
-    spotify: "https://open.spotify.com/embed/playlist/5qjA8DcX53CckB45cX5Pc9?utm_source=generator"
+    spotify: null
   }
 };
 
@@ -1442,12 +1450,6 @@ let html = `
 
   modalBodyEl.innerHTML = html;
 
-  if(data.spotify){
-    spotifyBtn.style.display = "inline-flex";
-    spotifyBtn.href = data.spotify;
-  }else{
-    spotifyBtn.style.display = "none";
-  }
 }
 
 function openLetterFromLastWin(){
